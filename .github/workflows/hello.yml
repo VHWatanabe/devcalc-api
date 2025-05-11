@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout do repositório
+      
+      - name: Exibir mensagem "Pipeline iniciado com sucesso"
+        run: echo "Pipeline iniciado com sucesso"
+      
