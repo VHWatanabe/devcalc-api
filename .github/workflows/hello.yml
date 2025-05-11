@@ -5,13 +5,13 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    steps: 
       - name: Checkout do repositório
-      
+        uses: actions/checkout@v4
+
       - name: Exibir mensagem "Pipeline iniciado com sucesso"
         run: echo "Pipeline iniciado com sucesso"
-      
