@@ -1,4 +1,6 @@
 # README
+![CI](https://github.com/VHWatanabe/devcalc-api/actions/workflows/ci.yml/badge.svg)
+
 ## Objetivo
 Este projeto é uma API Java para realizar cálculos matemáticos básicos, servindo como base para o aprendizado de Java com Maven.
 
