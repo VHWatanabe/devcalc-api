@@ -51,4 +51,4 @@ jobs:
           distribution: 'temurin'
 
       - name: Rodar testes automatizados
-        run: mvn test
+        run: exit 1
