@@ -10,3 +10,6 @@ Este projeto utiliza o Apache Maven como ferramenta de build.
 ```bash
 git clone https://github.com/VHWatanabe/devcalc-api.git
 ```
+## Registro de Depuração (Exercício 5 - TP2)
+
+Durante os testes com o GitHub Actions, foi introduzido intencionalmente um erro no step de testes com o comando `exit 1`. A falha foi detectada acessando a aba Actions no GitHub, analisando os logs detalhados do job `test`, onde foi exibido o código de erro e a saída do terminal. Após identificar a linha que causava o problema, o erro foi corrigido substituindo `exit 1` pelo comando correto `mvn test`, e um novo push foi feito para confirmar a execução bem-sucedida do pipeline.
