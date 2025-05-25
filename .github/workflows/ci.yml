@@ -22,11 +22,11 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
         
-      - name: Configurar Oracle OpenJDK 21
+      - name: Configurar Temurin OpenJDK 21
         uses: actions/setup-java@v3
         with:
           java-version: '21'
-          distribution: 'oraclejdk'
+          distribution: 'temurin'
 
       - name: Rodar o build com Maven
         run: mvn clean install
@@ -38,11 +38,11 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Configurar Oracle OpenJDK 21
+      - name: Configurar Temurin OpenJDK 21
         uses: actions/setup-java@v3
         with:
           java-version: '21'
-          distribution: 'oraclejdk'
+          distribution: 'temurin'
 
       - name: Rodar os testes automatizados
         run: mvn test
@@ -54,11 +54,11 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Configurar Oracle OpenJDK 21
+      - name: Configurar Temurin OpenJDK 21
         uses: actions/setup-java@v3
         with:
           java-version: '21'
-          distribution: 'oraclejdk'
+          distribution: 'temurin'
 
       - name: Gerar o arquivo .jar com Maven
         run: mvn package
