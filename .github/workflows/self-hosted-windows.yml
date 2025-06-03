@@ -1,0 +1,20 @@
+name: Teste Runner Self-Hosted Windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-self-hosted-windows:
+    runs-on: self-hosted
+
+    steps:
+      - name: Exibir informações do sistema
+        run: systeminfo
+
+      - name: Verificar versão do Java
+        run: java -version
+
+      - name: Instalar Git via Chocolatey
+        run: |
+          choco install git -y
+          git --version
