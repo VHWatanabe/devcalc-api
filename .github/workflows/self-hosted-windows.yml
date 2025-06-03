@@ -9,12 +9,15 @@ jobs:
 
     steps:
       - name: Exibir informações do sistema
+        shell: powershell
         run: systeminfo
 
       - name: Verificar versão do Java
+        shell: powershell
         run: java -version
 
       - name: Instalar Git via Chocolatey
+        shell: powershell
         run: |
           choco install git -y
           git --version
