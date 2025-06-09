@@ -5,7 +5,7 @@ on:
 
 jobs:
   test-self-hosted-windows:
-    runs-on: self-hosted
+    runs-on: [self-hosted, windows]
 
     steps:
       - name: Exibir informações do sistema
