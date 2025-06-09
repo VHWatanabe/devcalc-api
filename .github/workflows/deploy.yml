@@ -1,0 +1,36 @@
+name: Deploy Pipeline
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+
+jobs:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+    steps:
+      - name: Check branch
+        run: echo "Fazendo deploy no ambiente dev..."
+
+      - name: Usar variáveis do ambiente
+        run: |
+          echo "API_URL=${{ vars.API_URL }}"
+          echo "DEBUG=${{ vars.DEBUG }}"
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - name: Check branch
+        run: echo "Fazendo deploy no ambiente PROD..."
+
+      - name: Usar segredos do ambiente
+        run: |
+          echo "Usando segredo: PROD_API_KEY"
+          echo "Valor simulado: ${{ secrets.PROD_API_KEY }}"
