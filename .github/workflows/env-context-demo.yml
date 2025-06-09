@@ -1,0 +1,32 @@
+name: Demonstração de Contextos e Variáveis
+
+on:
+  workflow_dispatch:
+
+env:
+  STAGE: production
+
+jobs:
+  mostrar-contextos-e-variaveis:
+    runs-on: [self-hosted, windows]
+
+    env:
+      STAGE: staging
+
+    steps:
+      - name: Mostrar usuário que acionou o workflow
+        run: echo "Workflow acionado por: ${{ github.actor }}"
+
+      - name: Mostrar sistema operacional do runner
+        run: echo "Runner OS: ${{ runner.os }}"
+
+      - name: Exibir valor da variável STAGE (nível de job)
+        run: echo "STAGE atual: $env:STAGE"
+
+      - name: Sobrescrever STAGE no step
+        env:
+          STAGE: test
+        run: echo "STAGE no step: $env:STAGE"
+
+      - name: Confirmar que valor de STAGE volta ao nível do job
+        run: echo "STAGE após sobrescrita do step: $env:STAGE"
